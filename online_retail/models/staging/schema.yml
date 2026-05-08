@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_online_retail
+    description: "Cleaned online retail data, one row per line item from source"
+    columns:
+      - name: invoice_id
+        description: "Invoice identifier. Starts with 'C' for cancellations."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Product code"
+        tests:
+          - not_null
+
+      - name: invoice_timestamp
+        tests:
+          - not_null
